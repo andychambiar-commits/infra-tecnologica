@@ -8,7 +8,7 @@ const FeatureList = [
   {
     title: 'Comunicaciones',
     image: require('@site/static/img/comunicacion.jpeg').default,
-    link: '/docs/comunicaciones', 
+    link: '/docs/Comunicaciones', 
     description: (
       <>
         La base de la infraestructura tecnológica. Abarca el proceso de transmisión de datos, 
@@ -19,7 +19,7 @@ const FeatureList = [
   {
     title: 'Redes',
     image: require('@site/static/img/redes.jpeg').default,
-    link: '/docs/redes',
+    link: '/docs/Redes',
     description: (
       <>
         Interconexión mediante modelos OSI y TCP/IP. Incluye topologías, arquitecturas, 
@@ -30,7 +30,7 @@ const FeatureList = [
   {
     title: 'Software',
     image: require('@site/static/img/software.jpeg').default,
-    link: '/docs/software',
+    link: '/docs/Software',
     description: (
       <>
         Sistemas operativos de red y servidores. Abarca servicios de infraestructura (DHCP, DNS), 
@@ -41,7 +41,7 @@ const FeatureList = [
   {
     title: 'Hardware',
     image: require('@site/static/img/hardware.jpeg').default,
-    link: '/docs/hardware',
+    link: '/docs/Hardware',
     description: (
       <>
         Dispositivos físicos y de interconexión: routers, switches, access points y firewalls. 
