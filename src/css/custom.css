@@ -28,3 +28,95 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* ===== Pega este bloque al FINAL de src/css/custom.css ===== */
+
+/* Diagrama de flujo (emisor -> mensaje -> medio -> receptor) */
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1.5rem 0;
+}
+.flow span {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-darkest);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.flow .arrow {
+  background: none;
+  padding: 0;
+  color: var(--ifm-color-primary);
+  font-size: 1.4rem;
+}
+[data-theme='dark'] .flow span:not(.arrow) {
+  background: rgba(37, 194, 149, 0.15);
+  color: var(--ifm-color-primary-lighter);
+}
+
+/* Cuadrícula de tarjetas */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.card-grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.card-grid--4 {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.info-card {
+  padding: 1.1rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-top: 4px solid var(--ifm-color-primary);
+  border-radius: 10px;
+  background: var(--ifm-background-surface-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.info-card__icon {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+.info-card strong {
+  display: block;
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+.info-card p {
+  margin-bottom: 0.5rem;
+  font-size: 0.92rem;
+}
+.info-card em {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Efecto de sobresalir (hover) para los enlaces de la página principal */
+.hover-scale {
+  display: inline-block;
+  transition: transform 0.3s ease-out; /* Animación suave */
+}
+
+/* Al pasar el cursor, el elemento crece un 5% */
+.hover-scale:hover {
+  transform: scale(1.05); 
+}
+
+/* Opcional: Agrega una pequeña sombra a la imagen al pasar el cursor */
+.hover-scale:hover img {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-out;
+}

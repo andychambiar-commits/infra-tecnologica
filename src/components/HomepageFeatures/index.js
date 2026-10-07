@@ -1,48 +1,72 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
+import Link from '@docusaurus/Link'; // Importamos el componente para enlaces internos
 import styles from './styles.module.css';
 
+// Agregamos la propiedad 'link' a cada objeto apuntando al 'id' de tus archivos .md
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Comunicaciones',
+    image: require('@site/static/img/comunicacion.jpeg').default,
+    link: '/docs/comunicaciones', 
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        La base de la infraestructura tecnológica. Abarca el proceso de transmisión de datos, 
+        tecnologías cableadas, inalámbricas, móviles, satelitales y conceptos como ancho de banda.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Redes',
+    image: require('@site/static/img/redes.jpeg').default,
+    link: '/docs/redes',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Interconexión mediante modelos OSI y TCP/IP. Incluye topologías, arquitecturas, 
+        direccionamiento IPv4/IPv6, subnetting, VLANs y protocolos de enrutamiento.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Software',
+    image: require('@site/static/img/software.jpeg').default,
+    link: '/docs/software',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Sistemas operativos de red y servidores. Abarca servicios de infraestructura (DHCP, DNS), 
+        herramientas de monitoreo (Zabbix, Wireshark) y seguridad perimetral e interna.
+      </>
+    ),
+  },
+  {
+    title: 'Hardware',
+    image: require('@site/static/img/hardware.jpeg').default,
+    link: '/docs/hardware',
+    description: (
+      <>
+        Dispositivos físicos y de interconexión: routers, switches, access points y firewalls. 
+        Incluye medios de transmisión (cobre y fibra óptica) y dispositivos finales.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({image, title, description, link}) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--3')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        {/* Agregamos la clase hover-scale al enlace de la imagen */}
+        <Link to={link} className="hover-scale">
+          <img src={image} className={styles.featureSvg} alt={title} style={{ borderRadius: '10px', objectFit: 'cover' }} /> 
+        </Link>
       </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
+      <div className="text--center padding-horiz--md" style={{ marginTop: '1rem' }}>
+        <Heading as="h3">
+          {/* Agregamos la clase hover-scale al enlace del título */}
+          <Link to={link} className="hover-scale" style={{ color: 'inherit', textDecoration: 'none' }}>
+            {title}
+          </Link>
+        </Heading>
         <p>{description}</p>
       </div>
     </div>
