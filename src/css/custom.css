@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #48c517;
+  --ifm-color-primary: #29784c;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -119,4 +119,83 @@
 .hover-scale:hover img {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   transition: box-shadow 0.3s ease-out;
+}
+
+/* ===== Pega este bloque al FINAL de src/css/custom.css ===== */
+
+/* Figuras con pie de foto */
+.img-figure {
+  margin: 1.5rem auto;
+  text-align: center;
+}
+.img-figure img {
+  max-width: 100%;
+  border-radius: 10px;
+  background: var(--ifm-color-emphasis-200); /* se ve mientras no hay imagen */
+  min-height: 120px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.img-figure img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+.img-figure figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Galería con efecto hover: zoom + texto que sube */
+.hover-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+.hover-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--ifm-color-emphasis-200);
+  aspect-ratio: 3 / 2;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+.hover-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.hover-card:hover img {
+  transform: scale(1.12);
+}
+.hover-card__info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+  transform: translateY(100%);
+  transition: transform 0.35s ease;
+}
+.hover-card:hover .hover-card__info {
+  transform: translateY(0);
+}
+.hover-card__info span {
+  font-size: 0.85rem;
+}
+
+/* En pantallas táctiles (sin hover) el texto se muestra siempre */
+@media (hover: none) {
+  .hover-card__info {
+    transform: translateY(0);
+  }
 }

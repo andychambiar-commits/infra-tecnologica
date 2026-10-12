@@ -58,6 +58,21 @@ Los modelos dividen la comunicación en **capas**, cada una con una función esp
 De la capa 7 a la 1: **A**ll **P**eople **S**eem **T**o **N**eed **D**ata **P**rocessing (Aplicación, Presentación, Sesión, Transporte, Red, Datos, Física).
 :::
 
+<details>
+  <summary>📦 Ver cómo viajan los datos por las capas (encapsulación)</summary>
+
+Al enviar información, cada capa **agrega su propia cabecera** a los datos (encapsulación). El receptor hace el proceso inverso, de la capa 1 a la 7 (desencapsulación).
+
+{/* 🖼️ IMAGEN → static/img/redes/encapsulacion-datos.png
+    QUÉ DEBE SER: Diagrama en escalera descendente: Datos, luego Segmento (con cabecera TCP), Paquete (con cabecera IP), Trama (con cabecera y cola Ethernet) y Bits. Cada capa agrega un bloque de color distinto.
+    MEDIDAS SUGERIDAS: 1200 x 500 px */}
+<figure className="img-figure">
+  <img src="/img/redes/encapsulacion-datos.png" alt="Proceso de encapsulación de datos a través de las capas del modelo OSI" />
+  <figcaption>Figura 1. Encapsulación: cada capa agrega su cabecera.</figcaption>
+</figure>
+
+</details>
+
 ### Modelo TCP/IP (4 capas)
 
 Es el modelo que realmente usa internet. Es más simple y práctico que OSI.
@@ -71,12 +86,19 @@ Es el modelo que realmente usa internet. Es más simple y práctico que OSI.
 
 ### OSI vs. TCP/IP
 
+Ambos modelos organizan la comunicación en capas, pero con enfoques distintos.
+
+<details>
+  <summary>⚖️ Ver comparación</summary>
+
 | Aspecto | OSI | TCP/IP |
 |---|---|---|
 | **Capas** | 7 | 4 |
 | **Naturaleza** | Modelo teórico de referencia | Modelo práctico, base de internet |
 | **Uso principal** | Enseñanza y diagnóstico | Implementación real |
 | **Origen** | ISO | Departamento de Defensa de EE. UU. |
+
+</details>
 
 ---
 
@@ -94,6 +116,14 @@ Las redes se clasifican según el área geográfica que cubren.
 | **WAN** | Wide Area Network | Países o continentes | Internet |
 | **SAN** | Storage Area Network | Un datacenter | Red de almacenamiento de servidores |
 | **VPN** | Virtual Private Network | Cualquiera (sobre internet) | Acceso remoto seguro a la empresa |
+
+{/* 🖼️ IMAGEN → static/img/redes/clasificacion-alcance.png
+    QUÉ DEBE SER: Infografía de círculos concéntricos o escalera de tamaños que vaya de PAN (un escritorio) a LAN, CAN, MAN y WAN (el mundo), con un ícono representativo en cada nivel.
+    MEDIDAS SUGERIDAS: 1200 x 500 px */}
+<figure className="img-figure">
+  <img src="/img/redes/clasificacion-alcance.png" alt="Clasificación de las redes por alcance, de PAN a WAN" />
+  <figcaption>Figura 2. Redes según su alcance geográfico.</figcaption>
+</figure>
 
 ---
 
@@ -203,32 +233,67 @@ Combina dos o más topologías, por ejemplo, **estrellas conectadas entre sí en
   </TabItem>
 </Tabs>
 
+<details>
+  <summary>🔍 Ver topología física vs. lógica con ejemplos</summary>
+
+{/* 🖼️ IMAGEN → static/img/redes/topologia-fisica-vs-logica.png
+    QUÉ DEBE SER: Imagen dividida en dos mitades con los mismos equipos: a la izquierda el cableado real (estrella hacia un hub o switch) y a la derecha el recorrido de los datos (por ejemplo, un bus o un anillo), con flechas.
+    MEDIDAS SUGERIDAS: 1200 x 450 px */}
+<figure className="img-figure">
+  <img src="/img/redes/topologia-fisica-vs-logica.png" alt="Comparación entre topología física y topología lógica" />
+  <figcaption>Figura 3. La topología física y la lógica pueden ser distintas.</figcaption>
+</figure>
+
+| Red | Topología física | Topología lógica |
+|---|---|---|
+| **Ethernet con hub** | Estrella | Bus (todos reciben la señal) |
+| **Token Ring** | Estrella (hacia el MAU) | Anillo |
+| **Ethernet con switch** | Estrella | Estrella (punto a punto entre puertos) |
+
+</details>
+
 ---
 
 ## Arquitecturas de red
 
 Definen **cómo se reparten los roles** entre los equipos de la red.
 
-<div className="card-grid card-grid--3">
-  <div className="info-card">
-    <span className="info-card__icon">🗄️</span>
-    <strong>Cliente-servidor</strong>
-    <p>Los clientes solicitan servicios y los servidores los proveen de forma centralizada.</p>
-    <em>Ventaja: control y seguridad centralizados. Desventaja: el servidor es un punto crítico. Ejemplo: web y correo.</em>
+**Pasa el cursor sobre cada diagrama:**
+
+<div className="hover-gallery">
+  {/* 🖼️ IMAGEN → static/img/redes/arq-cliente-servidor.png
+      QUÉ DEBE SER: Diagrama con un servidor al centro conectado a varios clientes (PC, laptop, celular), con flechas de solicitud y respuesta.
+      MEDIDAS SUGERIDAS: 600 x 400 px (las tres con la misma proporción y buen margen interior) */}
+  <div className="hover-card">
+    <img src="/img/redes/arq-cliente-servidor.png" alt="Arquitectura cliente-servidor" />
+    <div className="hover-card__info"><strong>Cliente-servidor</strong><span>Los clientes solicitan servicios y los servidores los proveen de forma centralizada.</span></div>
   </div>
-  <div className="info-card">
-    <span className="info-card__icon">🤝</span>
-    <strong>Peer-to-peer (P2P)</strong>
-    <p>Todos los equipos son iguales y comparten recursos entre sí, sin servidor central.</p>
-    <em>Ventaja: económica y simple. Desventaja: difícil de controlar y proteger. Ejemplo: BitTorrent.</em>
+  {/* 🖼️ IMAGEN → static/img/redes/arq-p2p.png
+      QUÉ DEBE SER: Diagrama con varios equipos del mismo tamaño conectados directamente entre sí, sin servidor central.
+      MEDIDAS SUGERIDAS: 600 x 400 px */}
+  <div className="hover-card">
+    <img src="/img/redes/arq-p2p.png" alt="Arquitectura peer-to-peer" />
+    <div className="hover-card__info"><strong>Peer-to-peer (P2P)</strong><span>Todos los equipos son iguales y comparten recursos entre sí.</span></div>
   </div>
-  <div className="info-card">
-    <span className="info-card__icon">🔀</span>
-    <strong>Híbrida</strong>
-    <p>Combina un servidor central para coordinar con intercambio directo entre usuarios.</p>
-    <em>Ventaja: equilibrio entre control y eficiencia. Ejemplo: algunas plataformas de videollamadas.</em>
+  {/* 🖼️ IMAGEN → static/img/redes/arq-hibrida.png
+      QUÉ DEBE SER: Diagrama con un servidor pequeño de coordinación y varios equipos que, además, se conectan entre ellos.
+      MEDIDAS SUGERIDAS: 600 x 400 px */}
+  <div className="hover-card">
+    <img src="/img/redes/arq-hibrida.png" alt="Arquitectura híbrida" />
+    <div className="hover-card__info"><strong>Híbrida</strong><span>Combina un servidor que coordina con intercambio directo entre usuarios.</span></div>
   </div>
 </div>
+
+<details>
+  <summary>⚖️ Ver ventajas y desventajas</summary>
+
+| Arquitectura | Ventajas | Desventajas | Ejemplo |
+|---|---|---|---|
+| **Cliente-servidor** | Control y seguridad centralizados | El servidor es un punto crítico | Web y correo |
+| **P2P** | Económica y simple | Difícil de controlar y proteger | BitTorrent |
+| **Híbrida** | Equilibrio entre control y eficiencia | Más compleja de administrar | Algunas plataformas de videollamadas |
+
+</details>
 
 ---
 
@@ -245,9 +310,24 @@ Para que un dato llegue a su destino, cada dispositivo necesita identificadores.
 | **Puerto** | Número que identifica el servicio dentro del equipo (capa 4). | 80 (HTTP), 443 (HTTPS) |
 | **DNS** | Traduce nombres de dominio a direcciones IP. | ejemplo.com ➜ 93.184.216.34 |
 
-:::info Puertos más comunes
-**21** FTP · **22** SSH · **25** SMTP · **53** DNS · **80** HTTP · **443** HTTPS · **3389** RDP
-:::
+<details>
+  <summary>🚪 Ver puertos más comunes</summary>
+
+| Puerto | Protocolo | Servicio |
+|---|---|---|
+| **20 y 21** | FTP | Transferencia de archivos |
+| **22** | SSH | Acceso remoto seguro |
+| **23** | Telnet | Acceso remoto sin cifrar |
+| **25** | SMTP | Envío de correo |
+| **53** | DNS | Resolución de nombres |
+| **67 y 68** | DHCP | Asignación automática de IP |
+| **80** | HTTP | Páginas web |
+| **110** | POP3 | Recepción de correo |
+| **143** | IMAP | Recepción de correo |
+| **443** | HTTPS | Páginas web cifradas |
+| **3389** | RDP | Escritorio remoto de Windows |
+
+</details>
 
 ---
 
@@ -256,6 +336,11 @@ Para que un dato llegue a su destino, cada dispositivo necesita identificadores.
 ### Subnetting
 
 Consiste en **dividir una red grande en subredes más pequeñas** para ordenar el tráfico, mejorar la seguridad y aprovechar mejor las direcciones.
+
+<details>
+  <summary>🧮 Ver ejemplo resuelto</summary>
+
+**Fórmulas útiles:** subredes = 2^n (n = bits prestados a la red) y hosts utilizables = 2^h − 2 (h = bits de host).
 
 | Subred | Rango de hosts | Broadcast |
 |---|---|---|
@@ -266,6 +351,8 @@ Consiste en **dividir una red grande en subredes más pequeñas** para ordenar e
 
 El ejemplo divide la red 192.168.1.0/24 en **4 subredes /26**, cada una con **62 hosts utilizables**.
 
+</details>
+
 ### VLAN
 
 Una **VLAN** (Virtual LAN) divide lógicamente una red física en varias redes independientes dentro de un mismo switch. Por ejemplo: VLAN 10 para Administración, VLAN 20 para Ventas y VLAN 30 para Invitados.
@@ -274,15 +361,47 @@ Una **VLAN** (Virtual LAN) divide lógicamente una red física en varias redes i
 - Mejora la seguridad al aislar grupos.
 - Se identifica mediante etiquetas **802.1Q** en los enlaces troncales.
 
+<details>
+  <summary>🏷️ Ver ejemplo de VLAN</summary>
+
+{/* 🖼️ IMAGEN → static/img/redes/vlan-segmentacion.png
+    QUÉ DEBE SER: Diagrama de un solo switch con equipos agrupados por colores en tres VLAN (10, 20 y 30), mostrando que cada grupo queda aislado aunque compartan el mismo equipo físico.
+    MEDIDAS SUGERIDAS: 1000 x 500 px */}
+<figure className="img-figure">
+  <img src="/img/redes/vlan-segmentacion.png" alt="Un switch dividido en tres VLAN" />
+  <figcaption>Figura 4. Un switch físico dividido en varias redes lógicas.</figcaption>
+</figure>
+
+| VLAN | Nombre | Uso |
+|---|---|---|
+| **10** | Administración | Personal administrativo |
+| **20** | Ventas | Equipo comercial |
+| **30** | Invitados | Wi-Fi para visitantes |
+
+</details>
+
 ### NAT
 
 **NAT** (Network Address Translation) traduce direcciones IP privadas a una o más IP públicas, lo que permite que una red completa salga a internet con pocas direcciones públicas.
+
+<details>
+  <summary>🔁 Ver tipos de NAT</summary>
+
+{/* 🖼️ IMAGEN → static/img/redes/nat-pat.png
+    QUÉ DEBE SER: Diagrama de varias computadoras con IP privadas (192.168.1.x) que pasan por un router y salen a internet con una sola IP pública, indicando la traducción en el router.
+    MEDIDAS SUGERIDAS: 1200 x 450 px */}
+<figure className="img-figure">
+  <img src="/img/redes/nat-pat.png" alt="Funcionamiento de NAT: IP privadas traducidas a una IP pública" />
+  <figcaption>Figura 5. NAT/PAT: muchas IP privadas comparten una IP pública.</figcaption>
+</figure>
 
 | Tipo | Descripción |
 |---|---|
 | **Estático** | Una IP privada se asocia a una IP pública fija. |
 | **Dinámico** | Se asigna una IP pública de un conjunto disponible. |
 | **PAT (sobrecarga)** | Muchas IP privadas comparten una sola IP pública, diferenciadas por puerto. Es el más usado. |
+
+</details>
 
 ### Enrutamiento
 
@@ -297,7 +416,7 @@ Las rutas se configuran **manualmente** por el administrador.
 - ❌ No se adapta solo a fallas; no escala bien.
 - Ideal para redes pequeñas o rutas por defecto.
 
-</TabItem>
+  </TabItem>
   <TabItem value="dinamico" label="🔁 Dinámico">
 
 Los routers **intercambian información** y calculan las rutas automáticamente.

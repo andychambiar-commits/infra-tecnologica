@@ -72,11 +72,26 @@ Son los equipos donde **se origina o termina** la comunicación. Se conectan a l
 
 ### Tipos de servidores
 
+Según su formato físico, los servidores se clasifican en tres tipos.
+
+<details>
+  <summary>🗄️ Ver tipos de servidores: torre, rack y blade</summary>
+
+{/* 🖼️ IMAGEN → static/img/hardware/servidores-torre-rack-blade.jpg
+    QUÉ DEBE SER: Foto o ilustración que compare un servidor torre, un servidor rack (1U o 2U) y un chasis blade, uno al lado del otro.
+    MEDIDAS SUGERIDAS: 1200 x 450 px */}
+<figure className="img-figure">
+  <img src="/img/hardware/servidores-torre-rack-blade.jpg" alt="Servidor torre, servidor rack y chasis blade" />
+  <figcaption>Figura 1. Formatos físicos de servidores.</figcaption>
+</figure>
+
 | Tipo | Descripción | Ventaja | Uso típico |
 |---|---|---|---|
 | **Torre** | Gabinete similar a un PC de escritorio. | Económico y fácil de instalar. | Pymes, oficinas pequeñas |
 | **Rack** | Montado en un rack estándar de 19 pulgadas (1U, 2U, 4U). | Alta densidad y orden. | Salas de servidores, datacenters |
 | **Blade** | Módulos delgados que comparten chasis, energía y refrigeración. | Máxima densidad y administración centralizada. | Datacenters grandes, virtualización |
+
+</details>
 
 ---
 
@@ -91,9 +106,53 @@ Conectan los dispositivos finales entre sí y con otras redes. Cada uno trabaja 
 | **Access Point (AP)** | Extiende la red cableada a dispositivos inalámbricos. | 1 y 2 |
 | **Firewall** | Filtra el tráfico y aplica políticas de seguridad. | 3 a 7 |
 
+**Pasa el cursor sobre cada equipo:**
+
+<div className="hover-gallery">
+  {/* 🖼️ IMAGEN → static/img/hardware/router.jpg
+      QUÉ DEBE SER: Foto de un router empresarial (por ejemplo, un Cisco ISR o un MikroTik) de frente, con fondo neutro.
+      MEDIDAS SUGERIDAS: 600 x 400 px (las cuatro fotos con la misma proporción) */}
+  <div className="hover-card">
+    <img src="/img/hardware/router.jpg" alt="Router de red" />
+    <div className="hover-card__info"><strong>Router</strong><span>Conecta redes distintas y enruta paquetes (capa 3).</span></div>
+  </div>
+  {/* 🖼️ IMAGEN → static/img/hardware/switch.jpg
+      QUÉ DEBE SER: Foto de un switch gestionable de 24 o 48 puertos, de frente, con cables conectados si es posible.
+      MEDIDAS SUGERIDAS: 600 x 400 px */}
+  <div className="hover-card">
+    <img src="/img/hardware/switch.jpg" alt="Switch de red" />
+    <div className="hover-card__info"><strong>Switch</strong><span>Conecta equipos de una LAN usando direcciones MAC (capa 2).</span></div>
+  </div>
+  {/* 🖼️ IMAGEN → static/img/hardware/access-point.jpg
+      QUÉ DEBE SER: Foto de un access point Wi-Fi de techo (formato disco), de frente o instalado en el techo.
+      MEDIDAS SUGERIDAS: 600 x 400 px */}
+  <div className="hover-card">
+    <img src="/img/hardware/access-point.jpg" alt="Access point Wi-Fi" />
+    <div className="hover-card__info"><strong>Access Point</strong><span>Da acceso inalámbrico a la red cableada.</span></div>
+  </div>
+  {/* 🖼️ IMAGEN → static/img/hardware/firewall.jpg
+      QUÉ DEBE SER: Foto de un firewall de escritorio o de rack (por ejemplo, un FortiGate), de frente.
+      MEDIDAS SUGERIDAS: 600 x 400 px */}
+  <div className="hover-card">
+    <img src="/img/hardware/firewall.jpg" alt="Firewall de red" />
+    <div className="hover-card__info"><strong>Firewall</strong><span>Filtra el tráfico y protege la red.</span></div>
+  </div>
+</div>
+
+{/* 🖼️ IMAGEN → static/img/hardware/diagrama-red-dispositivos.png
+    QUÉ DEBE SER: Diagrama de una red típica: Internet, luego firewall, router, switch, y de ahí un access point (con laptop y celular) y equipos cableados (PC, servidor, impresora). Con íconos y etiquetas.
+    MEDIDAS SUGERIDAS: 1200 x 500 px */}
+<figure className="img-figure">
+  <img src="/img/hardware/diagrama-red-dispositivos.png" alt="Diagrama de una red con firewall, router, switch y access point" />
+  <figcaption>Figura 2. Ubicación de cada dispositivo en una red típica.</figcaption>
+</figure>
+
 ### Routers
 
 Interconectan redes y deciden la mejor ruta para cada paquete. Pueden incluir NAT, VPN y balanceo de múltiples enlaces WAN.
+
+<details>
+  <summary>🔀 Ver marcas y modelos de routers (5 marcas × 5 modelos)</summary>
 
 <Tabs>
   <TabItem value="r-cisco" label="Cisco" default>
@@ -153,9 +212,14 @@ Interconectan redes y deciden la mejor ruta para cada paquete. Pueden incluir NA
   </TabItem>
 </Tabs>
 
+</details>
+
 ### Switches
 
 Conectan equipos dentro de una red local y reenvían tramas según la dirección MAC. Los switches **capa 3** además pueden enrutar entre VLANs.
+
+<details>
+  <summary>🔁 Ver marcas y modelos de switches (5 marcas × 5 modelos)</summary>
 
 <Tabs>
   <TabItem value="s-cisco" label="Cisco" default>
@@ -215,9 +279,14 @@ Conectan equipos dentro de una red local y reenvían tramas según la dirección
   </TabItem>
 </Tabs>
 
+</details>
+
 ### Access Points (AP)
 
 Permiten que los dispositivos inalámbricos se conecten a la red cableada. Suelen alimentarse por **PoE** desde el switch.
+
+<details>
+  <summary>📶 Ver marcas y modelos de access points (5 marcas × 5 modelos)</summary>
 
 <Tabs>
   <TabItem value="a-ubiquiti" label="Ubiquiti" default>
@@ -277,9 +346,14 @@ Permiten que los dispositivos inalámbricos se conecten a la red cableada. Suele
   </TabItem>
 </Tabs>
 
+</details>
+
 ### Firewalls
 
 Controlan el tráfico entrante y saliente según reglas de seguridad. Los de **próxima generación (NGFW)** incluyen IPS, filtrado web, control de aplicaciones y VPN.
+
+<details>
+  <summary>🛡️ Ver marcas y modelos de firewalls (5 marcas × 5 modelos)</summary>
 
 <Tabs>
   <TabItem value="f-fortinet" label="Fortinet" default>
@@ -339,6 +413,8 @@ Controlan el tráfico entrante y saliente según reglas de seguridad. Los de **p
   </TabItem>
 </Tabs>
 
+</details>
+
 :::warning Verifica las especificaciones
 Los modelos son reales, pero los fabricantes actualizan sus productos con frecuencia. Antes de usar cifras exactas (throughput, puertos, PoE) confírmalas en la ficha técnica oficial de cada marca.
 :::
@@ -362,6 +438,32 @@ Son los canales físicos o inalámbricos por donde viajan las señales.
 | **Cat7** | 10 Gbps | 600 MHz | Entornos con mucha interferencia (blindado) |
 | **Cat8** | 25/40 Gbps hasta 30 m | 2000 MHz | Conexiones dentro del datacenter |
 
+<details>
+  <summary>🎨 Ver código de colores del RJ45 (T568A y T568B)</summary>
+
+{/* 🖼️ IMAGEN → static/img/hardware/rj45-t568a-t568b.png
+    QUÉ DEBE SER: Esquema del conector RJ45 que muestre el orden de colores de los 8 hilos en los estándares T568A y T568B, con el número de pin.
+    MEDIDAS SUGERIDAS: 1000 x 400 px */}
+<figure className="img-figure">
+  <img src="/img/hardware/rj45-t568a-t568b.png" alt="Orden de colores de los hilos en los estándares T568A y T568B" />
+  <figcaption>Figura 3. Orden de colores en el conector RJ45.</figcaption>
+</figure>
+
+| Pin | T568A | T568B |
+|---|---|---|
+| **1** | Blanco/verde | Blanco/naranja |
+| **2** | Verde | Naranja |
+| **3** | Blanco/naranja | Blanco/verde |
+| **4** | Azul | Azul |
+| **5** | Blanco/azul | Blanco/azul |
+| **6** | Naranja | Verde |
+| **7** | Blanco/marrón | Blanco/marrón |
+| **8** | Marrón | Marrón |
+
+Un cable **directo** usa el mismo estándar en ambos extremos (normalmente T568B). Un cable **cruzado** usa T568A en un extremo y T568B en el otro.
+
+</details>
+
 **Cable coaxial:** núcleo de cobre con malla de blindaje. Se usa en TV por cable, internet por cable y CCTV analógico. Conectores típicos: F y BNC.
 
   </TabItem>
@@ -378,6 +480,14 @@ Transmite datos como **pulsos de luz** por un hilo de vidrio. No se ve afectada 
 | **Color de cubierta** | Amarillo | Aqua (OM3 y OM4) |
 | **Uso** | Enlaces entre edificios y ciudades | Dentro de edificios y datacenters |
 
+{/* 🖼️ IMAGEN → static/img/hardware/fibra-estructura.png
+    QUÉ DEBE SER: Corte transversal de una fibra óptica con sus capas etiquetadas: núcleo, revestimiento (cladding), recubrimiento y cubierta. Opcional: comparar el núcleo monomodo (9 µm) con el multimodo (50 µm).
+    MEDIDAS SUGERIDAS: 1000 x 500 px */}
+<figure className="img-figure">
+  <img src="/img/hardware/fibra-estructura.png" alt="Estructura interna de una fibra óptica" />
+  <figcaption>Figura 4. Capas de una fibra óptica.</figcaption>
+</figure>
+
   </TabItem>
   <TabItem value="inalambricos" label="📡 Inalámbricos">
 
@@ -392,25 +502,36 @@ Transmite datos como **pulsos de luz** por un hilo de vidrio. No se ve afectada 
 
 ### Conectores más comunes
 
-<div className="card-grid card-grid--3">
-  <div className="info-card">
-    <span className="info-card__icon">🔌</span>
-    <strong>RJ45</strong>
-    <p>Conector de 8 pines para cable de par trenzado en redes Ethernet.</p>
+**Pasa el cursor sobre cada conector:**
+
+<div className="hover-gallery">
+  {/* 🖼️ IMAGEN → static/img/hardware/conector-rj45.jpg
+      QUÉ DEBE SER: Foto macro de un conector RJ45 macho con sus contactos dorados visibles.
+      MEDIDAS SUGERIDAS: 600 x 400 px (las tres fotos con la misma proporción) */}
+  <div className="hover-card">
+    <img src="/img/hardware/conector-rj45.jpg" alt="Conector RJ45" />
+    <div className="hover-card__info"><strong>RJ45</strong><span>Conector de 8 pines para cable de par trenzado en redes Ethernet.</span></div>
   </div>
-  <div className="info-card">
-    <span className="info-card__icon">🟦</span>
-    <strong>LC</strong>
-    <p>Conector pequeño de fibra con cierre a presión. Muy usado en transceivers SFP.</p>
+  {/* 🖼️ IMAGEN → static/img/hardware/conector-lc.jpg
+      QUÉ DEBE SER: Foto de un patch cord de fibra con conectores LC dúplex.
+      MEDIDAS SUGERIDAS: 600 x 400 px */}
+  <div className="hover-card">
+    <img src="/img/hardware/conector-lc.jpg" alt="Conector LC de fibra óptica" />
+    <div className="hover-card__info"><strong>LC</strong><span>Conector pequeño de fibra con cierre a presión. Muy usado en transceivers SFP.</span></div>
   </div>
-  <div className="info-card">
-    <span className="info-card__icon">⬜</span>
-    <strong>SC</strong>
-    <p>Conector de fibra cuadrado tipo push-pull. Común en redes FTTH y de telecomunicaciones.</p>
+  {/* 🖼️ IMAGEN → static/img/hardware/conector-sc.jpg
+      QUÉ DEBE SER: Foto de un patch cord de fibra con conectores SC (cuadrados).
+      MEDIDAS SUGERIDAS: 600 x 400 px */}
+  <div className="hover-card">
+    <img src="/img/hardware/conector-sc.jpg" alt="Conector SC de fibra óptica" />
+    <div className="hover-card__info"><strong>SC</strong><span>Conector cuadrado tipo push-pull. Común en redes FTTH y de telecomunicaciones.</span></div>
   </div>
 </div>
 
 ### Marcas de cableado
+
+<details>
+  <summary>🏷️ Ver marcas de cableado</summary>
 
 | Marca | Especialidad | Línea de ejemplo |
 |---|---|---|
@@ -419,6 +540,8 @@ Transmite datos como **pulsos de luz** por un hilo de vidrio. No se ve afectada 
 | **Belden** | Cables de cobre y fibra para empresas e industria | 10GXS |
 | **Corning** | Fibra óptica y soluciones de conectividad óptica | ClearCurve |
 | **Furukawa** | Cableado de cobre y fibra, fuerte presencia en Latinoamérica | GigaLan |
+
+</details>
 
 ---
 
@@ -451,6 +574,17 @@ Transmite datos como **pulsos de luz** por un hilo de vidrio. No se ve afectada 
 
 Módulos intercambiables que se insertan en puertos de switches y routers para conectar fibra o cobre de alta velocidad.
 
+<details>
+  <summary>🔌 Ver formatos de transceivers</summary>
+
+{/* 🖼️ IMAGEN → static/img/hardware/transceivers-sfp.jpg
+    QUÉ DEBE SER: Foto de módulos SFP y SFP+ (idealmente junto a un puerto de switch) para apreciar su tamaño y forma.
+    MEDIDAS SUGERIDAS: 1000 x 500 px */}
+<figure className="img-figure">
+  <img src="/img/hardware/transceivers-sfp.jpg" alt="Módulos transceivers SFP y SFP+" />
+  <figcaption>Figura 5. Transceivers SFP y SFP+.</figcaption>
+</figure>
+
 | Formato | Velocidad | Uso típico |
 |---|---|---|
 | **SFP** | 1 Gbps | Enlaces de fibra en redes de acceso |
@@ -459,15 +593,22 @@ Módulos intercambiables que se insertan en puertos de switches y routers para c
 | **QSFP+** | 40 Gbps | Agregación en datacenters |
 | **QSFP28** | 100 Gbps | Core y datacenters |
 
+</details>
+
 ### Power over Ethernet (PoE)
 
 Permite alimentar dispositivos (APs, cámaras IP, teléfonos) por el mismo cable de red.
+
+<details>
+  <summary>⚡ Ver estándares PoE</summary>
 
 | Estándar | Nombre común | Potencia por puerto | Ejemplo de uso |
 |---|---|---|---|
 | **IEEE 802.3af** | PoE | Hasta 15.4 W | Teléfonos IP, APs básicos |
 | **IEEE 802.3at** | PoE+ | Hasta 30 W | Cámaras, APs Wi-Fi 6 |
 | **IEEE 802.3bt** | PoE++ | Hasta 60 W o 90 W | Cámaras PTZ, APs Wi-Fi 7 |
+
+</details>
 
 ---
 

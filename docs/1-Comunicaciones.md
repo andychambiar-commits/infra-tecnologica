@@ -66,6 +66,19 @@ Para que exista comunicación se necesitan cinco elementos fundamentales:
   </div>
 </div>
 
+<details>
+  <summary>💡 Ver ejemplo: enviar un correo electrónico</summary>
+
+| Elemento | En el ejemplo |
+|---|---|
+| **Emisor** | Tu laptop con el cliente de correo |
+| **Receptor** | El servidor de correo del destinatario |
+| **Mensaje** | El correo con su archivo adjunto |
+| **Medio / Canal** | Wi-Fi hasta el router y luego fibra óptica |
+| **Protocolo** | SMTP sobre TCP/IP |
+
+</details>
+
 ---
 
 ## Tipos de transmisión
@@ -79,6 +92,14 @@ Define en qué sentido pueden fluir los datos entre los dos extremos.
 | **Simplex** | Un solo sentido, siempre del emisor al receptor. | Radio FM, televisión, teclado a PC |
 | **Half-duplex** | Ambos sentidos, pero **no al mismo tiempo**. | Walkie-talkie, Wi-Fi |
 | **Full-duplex** | Ambos sentidos **al mismo tiempo**. | Llamada telefónica, Ethernet con switch |
+
+{/* 🖼️ IMAGEN → static/img/comunicaciones/transmision-direccion.png
+    QUÉ DEBE SER: Diagrama con tres filas (Simplex, Half-duplex y Full-duplex). Cada fila muestra dos equipos conectados por flechas: una sola flecha, una flecha que alterna sentido y dos flechas simultáneas.
+    MEDIDAS SUGERIDAS: 1200 x 500 px (PNG con fondo transparente o blanco) */}
+<figure className="img-figure">
+  <img src="/img/comunicaciones/transmision-direccion.png" alt="Diagrama de transmisión simplex, half-duplex y full-duplex" />
+  <figcaption>Figura 1. Comparación de los modos de transmisión por dirección.</figcaption>
+</figure>
 
 ### Por sincronización, forma y señal
 
@@ -149,6 +170,32 @@ Define a cuántos destinatarios llega un mensaje.
 | **Coaxial** | Cable coaxial | Hasta 10 Gbps (DOCSIS 3.1) | TV por cable e internet |
 | **xDSL** | Línea telefónica de cobre | ADSL hasta 24 Mbps, VDSL2 hasta 100 Mbps | Internet residencial |
 
+**Pasa el cursor sobre cada foto:**
+
+<div className="hover-gallery">
+  {/* 🖼️ IMAGEN → static/img/comunicaciones/cable-utp.jpg
+      QUÉ DEBE SER: Foto de un cable de par trenzado UTP con conectores RJ45.
+      MEDIDAS SUGERIDAS: 600 x 400 px (las tres fotos deben tener la misma proporción) */}
+  <div className="hover-card">
+    <img src="/img/comunicaciones/cable-utp.jpg" alt="Cable UTP con conectores RJ45" />
+    <div className="hover-card__info"><strong>Cable UTP</strong><span>Ethernet en redes LAN. Hasta 100 m por segmento.</span></div>
+  </div>
+  {/* 🖼️ IMAGEN → static/img/comunicaciones/fibra-optica.jpg
+      QUÉ DEBE SER: Foto de fibra óptica (hilos iluminados o patch cord con conectores LC).
+      MEDIDAS SUGERIDAS: 600 x 400 px */}
+  <div className="hover-card">
+    <img src="/img/comunicaciones/fibra-optica.jpg" alt="Cable de fibra óptica" />
+    <div className="hover-card__info"><strong>Fibra óptica</strong><span>Pulsos de luz. Máxima velocidad y distancia.</span></div>
+  </div>
+  {/* 🖼️ IMAGEN → static/img/comunicaciones/cable-coaxial.jpg
+      QUÉ DEBE SER: Foto de un cable coaxial con su conector F, idealmente mostrando las capas internas.
+      MEDIDAS SUGERIDAS: 600 x 400 px */}
+  <div className="hover-card">
+    <img src="/img/comunicaciones/cable-coaxial.jpg" alt="Cable coaxial con conector F" />
+    <div className="hover-card__info"><strong>Cable coaxial</strong><span>TV por cable e internet por cable (DOCSIS).</span></div>
+  </div>
+</div>
+
   </TabItem>
   <TabItem value="inalambricas" label="📶 Inalámbricas">
 
@@ -160,6 +207,20 @@ Define a cuántos destinatarios llega un mensaje.
 | **Zigbee** | 10 a 100 m | 250 kbps | Domótica y sensores |
 | **LoRa** | 2 a 15 km | 0.3 a 50 kbps | IoT de largo alcance y bajo consumo |
 
+<details>
+  <summary>📶 Ver estándares Wi-Fi (IEEE 802.11)</summary>
+
+| Estándar | Nombre comercial | Bandas | Velocidad máx. teórica |
+|---|---|---|---|
+| **802.11b** | Wi-Fi 1 | 2.4 GHz | 11 Mbps |
+| **802.11g** | Wi-Fi 3 | 2.4 GHz | 54 Mbps |
+| **802.11n** | Wi-Fi 4 | 2.4 y 5 GHz | 600 Mbps |
+| **802.11ac** | Wi-Fi 5 | 5 GHz | 6.9 Gbps |
+| **802.11ax** | Wi-Fi 6 y 6E | 2.4, 5 y 6 GHz (6E) | 9.6 Gbps |
+| **802.11be** | Wi-Fi 7 | 2.4, 5 y 6 GHz | 46 Gbps |
+
+</details>
+
   </TabItem>
   <TabItem value="moviles" label="📱 Móviles">
 
@@ -170,6 +231,14 @@ Define a cuántos destinatarios llega un mensaje.
 | **4G** | LTE, LTE-Advanced | 100 Mbps a 1 Gbps | Streaming y banda ancha móvil |
 | **5G** | NR | 1 a 10 Gbps (pico) | Latencia muy baja, IoT masivo, industria |
 
+{/* 🖼️ IMAGEN → static/img/comunicaciones/evolucion-2g-5g.png
+    QUÉ DEBE SER: Infografía de línea de tiempo horizontal con las cuatro generaciones (2G, 3G, 4G, 5G), mostrando velocidad aproximada y un ícono de uso típico de cada una (llamada, internet, video, IoT).
+    MEDIDAS SUGERIDAS: 1200 x 400 px */}
+<figure className="img-figure">
+  <img src="/img/comunicaciones/evolucion-2g-5g.png" alt="Línea de tiempo de la evolución de las redes móviles de 2G a 5G" />
+  <figcaption>Figura 2. Evolución de las generaciones de telefonía móvil.</figcaption>
+</figure>
+
   </TabItem>
   <TabItem value="otras" label="🛰️ Otras">
 
@@ -179,6 +248,14 @@ Define a cuántos destinatarios llega un mensaje.
 | **Microondas** | Enlaces punto a punto con línea de vista. | Enlaces entre torres, backhaul |
 | **Radio** | Ondas de radio de distintas frecuencias (AM, FM, VHF, UHF). | Radiodifusión, radioenlaces |
 | **Infrarrojos** | Luz infrarroja de corto alcance. Requiere línea de vista. | Controles remotos, IrDA |
+
+{/* 🖼️ IMAGEN → static/img/comunicaciones/satelite-orbitas.png
+    QUÉ DEBE SER: Ilustración de la Tierra con las órbitas LEO, MEO y GEO, indicando la altura aproximada de cada una y un satélite en cada órbita.
+    MEDIDAS SUGERIDAS: 1000 x 600 px */}
+<figure className="img-figure">
+  <img src="/img/comunicaciones/satelite-orbitas.png" alt="Órbitas satelitales LEO, MEO y GEO alrededor de la Tierra" />
+  <figcaption>Figura 3. Órbitas satelitales y su altura aproximada.</figcaption>
+</figure>
 
   </TabItem>
 </Tabs>
@@ -218,7 +295,18 @@ El **ancho de banda** es lo que contratas; el **throughput** es lo que realmente
 
 ### Multiplexación
 
-Técnica que permite **compartir un mismo canal** entre varias comunicaciones.
+Técnica que permite **compartir un mismo canal** entre varias comunicaciones al mismo tiempo.
+
+<details>
+  <summary>📊 Ver técnicas: TDM, FDM y WDM</summary>
+
+{/* 🖼️ IMAGEN → static/img/comunicaciones/multiplexacion-tdm-fdm-wdm.png
+    QUÉ DEBE SER: Diagrama de tres paneles: TDM (bloques de colores alternados en el tiempo), FDM (franjas de colores apiladas por frecuencia) y WDM (haz de luz que se separa en colores con un prisma).
+    MEDIDAS SUGERIDAS: 1200 x 450 px */}
+<figure className="img-figure">
+  <img src="/img/comunicaciones/multiplexacion-tdm-fdm-wdm.png" alt="Comparación visual de las técnicas de multiplexación TDM, FDM y WDM" />
+  <figcaption>Figura 4. Técnicas de multiplexación.</figcaption>
+</figure>
 
 | Técnica | Cómo comparte el canal | Ejemplo |
 |---|---|---|
@@ -226,7 +314,14 @@ Técnica que permite **compartir un mismo canal** entre varias comunicaciones.
 | **FDM** (por frecuencia) | Cada usuario usa una banda de frecuencia distinta. | Radio y TV |
 | **WDM** (por longitud de onda) | Cada señal usa un color (longitud de onda) de luz distinto. | Fibra óptica de alta capacidad |
 
+</details>
+
 ### Conmutación de circuitos vs. de paquetes
+
+Define cómo se establece el camino de los datos entre el origen y el destino.
+
+<details>
+  <summary>🔀 Ver comparación</summary>
 
 | Característica | Circuitos | Paquetes |
 |---|---|---|
@@ -234,6 +329,8 @@ Técnica que permite **compartir un mismo canal** entre varias comunicaciones.
 | **Uso del canal** | Reservado, aunque no se use | Compartido, más eficiente |
 | **Retardo** | Constante | Variable |
 | **Ejemplo** | Telefonía tradicional | Internet |
+
+</details>
 
 ### Interferencia y atenuación
 
@@ -243,9 +340,34 @@ Técnica que permite **compartir un mismo canal** entre varias comunicaciones.
 ### Codificación y modulación
 
 - **Codificación:** convierte datos digitales en señales digitales para transmitirlos (por ejemplo, Manchester o NRZ).
-- **Modulación:** adapta la señal para viajar por un medio, variando la **amplitud (ASK)**, la **frecuencia (FSK)** o la **fase (PSK)** de una onda portadora. **QAM** combina amplitud y fase, y es muy usada en Wi-Fi, cable y 4G/5G.
+- **Modulación:** adapta la señal para viajar por un medio, usando una onda portadora que se modifica según los datos.
+
+<details>
+  <summary>〰️ Ver tipos de modulación</summary>
+
+{/* 🖼️ IMAGEN → static/img/comunicaciones/modulacion-ask-fsk-psk.png
+    QUÉ DEBE SER: Gráfico con cuatro ondas apiladas: la señal digital original (0 y 1) y su resultado con modulación ASK, FSK y PSK, alineadas en el tiempo.
+    MEDIDAS SUGERIDAS: 1200 x 600 px */}
+<figure className="img-figure">
+  <img src="/img/comunicaciones/modulacion-ask-fsk-psk.png" alt="Formas de onda de las modulaciones ASK, FSK y PSK" />
+  <figcaption>Figura 5. Modulación ASK, FSK y PSK de una misma señal digital.</figcaption>
+</figure>
+
+| Tipo | Qué varía de la portadora | Uso común |
+|---|---|---|
+| **ASK** | Amplitud | Sistemas simples, fibra óptica |
+| **FSK** | Frecuencia | Módems antiguos, radio digital |
+| **PSK** | Fase | Wi-Fi, Bluetooth, satélite |
+| **QAM** | Amplitud y fase | Wi-Fi, cable, 4G/5G |
+
+</details>
 
 ### Detección y corrección de errores
+
+Permiten saber si los datos llegaron dañados y, en algunos casos, repararlos.
+
+<details>
+  <summary>🛠️ Ver técnicas</summary>
 
 | Técnica | Función | Ejemplo |
 |---|---|---|
@@ -254,6 +376,8 @@ Técnica que permite **compartir un mismo canal** entre varias comunicaciones.
 | **CRC** | Código de redundancia cíclica, de alta fiabilidad. | Ethernet, Wi-Fi |
 | **ARQ** | Solicita retransmitir el dato dañado. | TCP |
 | **FEC** | Corrige errores sin retransmitir, con datos redundantes. | Satélite, 5G, DVD |
+
+</details>
 
 ---
 
