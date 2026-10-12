@@ -416,7 +416,7 @@ Las rutas se configuran **manualmente** por el administrador.
 - ❌ No se adapta solo a fallas; no escala bien.
 - Ideal para redes pequeñas o rutas por defecto.
 
-  </TabItem>
+</TabItem>
   <TabItem value="dinamico" label="🔁 Dinámico">
 
 Los routers **intercambian información** y calculan las rutas automáticamente.
